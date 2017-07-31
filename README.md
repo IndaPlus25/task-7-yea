@@ -1,15 +1,9 @@
 ### Deadline
-This work should be completed before **Friday 4th November**.
+This work should be completed before the exercise on **Friday 3rd November**.
 
 ### Instructions
-To pass the assignment, you must do all of the tasks. Small errors are acceptable, but the most important thing is that you attempt all the tasks. If you get stuck, then help is available in the labs.
-
-Please note that this is individual work. You may discuss the work with other students, but it is absolutely forbidden to submit copies of other student's work as your own. Please read and consider the [Code of Honour](https://www.kth.se/csc/utbildning/hederskodex) carefully.
-
-### Submission
-- All required work must be committed to your KTH Github Repository.
-- A week-7 repository will be created for you automatically and it can be found [here](https://gits-15.sys.kth.se/inda-16).
-- Please refer to the Kurswiki for help. Contact your teaching assistant or course leader if you get stuck.
+For instructions on how to do and submit the assignment, please see the
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-17/course-instructions#assignments).
 
 ### Homework
 Study all sections from chapter 5 from the course textbook and be prepared to answer any of the exercises.
