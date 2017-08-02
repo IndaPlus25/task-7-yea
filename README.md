@@ -6,7 +6,10 @@ For instructions on how to do and submit the assignment, please see the
 [assignments section of the course instructions](https://gits-15.sys.kth.se/inda-17/course-instructions#assignments).
 
 ### Homework
-Study all sections from chapter 5 from the course textbook and be prepared to answer any of the exercises.
+Study all sections lined up below and be prepared to discussed the material.
+
+* **5th ed:** All sections from chapter 5.
+* **6th ed:** Sections 6.1 -- 6.15.
 
 ### Github Task:
 You must complete the following exercises (n.b 5th Edition only here):
