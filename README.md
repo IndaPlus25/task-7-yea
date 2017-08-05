@@ -12,13 +12,13 @@ Study all sections lined up below and be prepared to discussed the material.
 * **6th ed:** Sections 6.1 -- 6.10 and 6.12 -- 6.15
 
 ### Github Task:
-You must complete the following exercises (n.b 5th Edition only here):
+You must complete the following exercises. Exercise numbers in parentheses
+are for the 6th ed, while the ones without are for the 5th ed.
 
-- 5.14 & 5.16 -- 5.20
-- Using JavaDoc, write the class documentation for `RandomTester`
-- 5.57 -- 5.60
-- 5.62 & 5.64 -- 5.66
-- 5.71
+- 5.14, 5.16, 5.18 and 5.20 (6.14, 6.16, 6.18 and 6.20)
+- 5.57 -- 5.60 (6.62 -- 6.65)
+- 5.62 & 5.64 -- 5.66 (6.68 and 6.70-6.72)
+- 5.71 (6.87)
 
 Please commit any written answers to the "docs" folder, and commit any Java
 code developed to the "code" folder of your KTH Github repo. Remember to push
@@ -26,7 +26,7 @@ to KTH Github.
 
 ### RandomTester
 
-#### Exercise 5.14
+#### Exercise 5.14 (6.14)
 Write some code (in BlueJ) to test the generation of random numbers. To do
 this, create a new class called RandomTester. In class RandomTester, implement
 two methods: `printOneRandom` (which prints out one random number) and
@@ -34,15 +34,19 @@ two methods: `printOneRandom` (which prints out one random number) and
 numbers you want, and then prints out the appropriate number of random
 numbers).
 
-#### Exercise 5.16
+#### Exercise 5.16 (6.16)
 Write a method in your RandomTester class called `throwDice` that returns a
 random number between 1 and 6 (inclusive).
 
-#### Exercise 5.18
+#### Exercise 5.18 (6.18)
 Extend your `getResponse` method so that it uses an ArrayList to store an
 arbitrary number of responses and randomly returns one of them.
 
-#### Exercise 5.20
+> **Assistant's note:** Your task is to write a method called `getResponse`
+> that randomly returns a string from an `ArrayList` of strings. This is really
+> all you need to know, but you can look at 5/6.17 for context.
+
+#### Exercise 5.20 (6.20)
 Add a method `randInRangeMinMax` to your RandomTester class that takes two
 parameters, min and max, and generates a random number in the range min to max
 (inclusive). Rewrite the body of the method you wrote for the previous exercise
@@ -51,31 +55,31 @@ should not be necessary to use a loop in this method.
 
 ### Scribble Demo
 
-#### Exercise 5.57
+#### Exercise 5.57 (6.62)
 In class DrawDemo, create a new method named `drawTriangle`. This method should
 create a pen (as in the drawSquare method) and then draw a green triangle.
 
-#### Exercise 5.58
+#### Exercise 5.58 (6.63)
 Write a method `drawPentagon` that draws a pentagon.
 
-#### Exercise 5.59
+#### Exercise 5.59 (6.64)
 Write a method `drawPolygon(int n)` that draws a regular polygon with n sides
 (thus, n=3 draws a triangle, n=4 draws a square, etc.).
 
-#### Exercise 5.60
+#### Exercise 5.60 (6.65)
 Write a method called `spiral` that draws a spiral (see Figure 5.6).
 
 ### Bouncing Balls
 
-#### Exercise 5.62
+#### Exercise 5.62 (6.68)
 Change the method `bounce` in class BallDemo to let the user choose how many
 balls should be bouncing.
 
-#### Exercise 5.64
+#### Exercise 5.64 (6.70)
 Change the `bounce` method to place the balls randomly anywhere in the top half
 of the screen.
 
-#### Exercise 5.65
+#### Exercise 5.65 (6.71)
 Write a new method named `boxBounce`. This method draws a rectangle (the “box”)
 on screen and one or more balls inside the box. For the balls, do not use
 BouncingBall, but create a new class BoxBall that moves around inside the box,
@@ -83,12 +87,12 @@ bouncing off the walls of the box so that the ball always stays inside. The
 initial position and speed of the ball should be random. The boxBounce method
 should have a parameter that specifies how many balls are in the box.
 
-#### Exercise 5.66
+#### Exercise 5.66 (6.72)
 Give the balls in boxBounce random colors.
 
 ### Star Wars
 
-#### Exercise 5.71
+#### Exercise 5.71 (6.87)
 There is a rumor circulating on the Internet that George Lucas (the creator of
 the Star Wars movies) uses a formula to create the names for the characters in
 his stories (Jar Jar Binks, ObiWan Kenobi, etc.). The formula—allegedly—is
