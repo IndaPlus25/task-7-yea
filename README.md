@@ -30,37 +30,11 @@ Write some code (in BlueJ) to test the generation of random numbers. To do this,
 #### Exercise 5.16
 Write a method in your RandomTester class called `throwDice` that returns a random number between 1 and 6 (inclusive).
 
-#### Exercise 5.17
-Write a method called `getResponse` that randomly returns one of the strings "yes", "no", or "maybe".
-
 #### Exercise 5.18
 Extend your `getResponse` method so that it uses an ArrayList to store an arbitrary number of responses and randomly returns one of them.
 
-#### Exercise 5.19
-Add a method `randInRange` to your RandomTester class that takes a parameter max and generates a random number in the range 1 to max (inclusive).
-
 #### Exercise 5.20
 Add a method `randInRangeMinMax` to your RandomTester class that takes two parameters, min and max, and generates a random number in the range min to max (inclusive). Rewrite the body of the method you wrote for the previous exercise so that it now calls this new method to generate its result. Note that it should not be necessary to use a loop in this method.
-
-#### Exercise 5.XX
-Using JavaDoc, write the class documentation for RandomTester class. First, briefly review the **Format of a Doc Comment** and **Example of Doc Comments** sections from the [official documentation](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) on JavaDoc from Oracle. Then within the RandomTester class, you must attempt to include the minimum JavaDoc requirements listed here:
-
-The documentation of a class should at least include:
-* the class name
-* a comment describing the overall purpose and characteristics of the class
-* a version number
-* the author’s name (or authors’ names)
-* documentation for each constructor and each method
-
-The documentation for each constructor and method should include:
-* the name of the method
-* the return type
-* the parameter names and types
-* a description of the purpose and function of the method
-* a description of each parameter
-* a description of the value returned
-
-Good Javadoc will become a **minimum requirement** in documentation of future assignments where you have created your own class, so absolute care must be taken to understand correct style of documentation.  Otherwise, you may be asked to **resubmit work if the documentation is of a poor standard**.
 
 ### Scribble Demo
 
