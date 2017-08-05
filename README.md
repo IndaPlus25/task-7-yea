@@ -8,8 +8,8 @@ For instructions on how to do and submit the assignment, please see the
 ### Homework
 Study all sections lined up below and be prepared to discussed the material.
 
-* **5th ed:** All sections from chapter 5.
-* **6th ed:** Sections 6.1 -- 6.15.
+* **5th ed:** 5.1 -- 5.9 and 5.11 -- 5.14
+* **6th ed:** Sections 6.1 -- 6.10 and 6.12 -- 6.15
 
 ### Github Task:
 You must complete the following exercises (n.b 5th Edition only here):
