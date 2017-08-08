@@ -9,7 +9,7 @@ For instructions on how to do and submit the assignment, please see the
 Study all sections lined up below and be prepared to discussed the material.
 
 * **5th ed:** 5.1 -- 5.9 and 5.11 -- 5.14
-* **6th ed:** Sections 6.1 -- 6.10 and 6.12 -- 6.15
+* **6th ed:** 6.1 -- 6.10 and 6.12 -- 6.15
 
 ### Github Task:
 You must complete the following exercises. Exercise numbers in parentheses
@@ -20,9 +20,9 @@ are for the 6th ed, while the ones without are for the 5th ed.
 - 5.62 & 5.64 -- 5.66 (6.68 and 6.70-6.72)
 - 5.71 (6.87)
 
-Please commit any written answers to the "docs" folder, and commit any Java
-code developed to the "code" folder of your KTH Github repo. Remember to push
-to KTH Github.
+Please commit any written answers to the [`docs`](docs) folder, and commit any
+Java code developed to the [`src`](src) folder of your KTH Github repo.
+Remember to push to KTH Github.
 
 ### RandomTester
 
