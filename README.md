@@ -8,14 +8,19 @@ For instructions on how to do and submit the assignment, please see the
 ### Homework
 Study all sections lined up below and be prepared to discussed the material.
 
-* **5th ed:** 5.1 -- 5.9 and 5.11 -- 5.14
+* **5th ed:** 5.1 -- 5.9, 8,9 and 5.11 -- 5.14
 * **6th ed:** 6.1 -- 6.10 and 6.12 -- 6.15
+
+> **Assistant's note:** 8.9 is grabbed seemingly out of nowhere for the 5th ed
+> as it covers Autoboxing and wrapper classes, which is covered in 6.10 in 6th
+> ed.
 
 ### Github Task:
 You must complete the following exercises. Exercise numbers in parentheses
 are for the 6th ed, while the ones without are for the 5th ed.
 
 - 5.14, 5.16, 5.18 and 5.20 (6.14, 6.16, 6.18 and 6.20)
+- 5.XX
 - 5.57 -- 5.60 (6.62 -- 6.65)
 - 5.62 & 5.64 -- 5.66 (6.68 and 6.70-6.72)
 - 5.71 (6.87)
@@ -52,6 +57,18 @@ parameters, min and max, and generates a random number in the range min to max
 (inclusive). Rewrite the body of the method you wrote for the previous exercise
 so that it now calls this new method to generate its result. Note that it
 should not be necessary to use a loop in this method.
+
+### Autoboxing and wrapper classes
+
+#### Exercies 5.XX
+**a:** Rewrite the following statement to utilize autoboxing:
+
+```java
+Integer wrapped = new Integer(2);
+```
+
+**b:** Write a statement that unboxes the `wrapped` variable into a primitive
+`int` variable called `unwrapped`.
 
 ### Scribble Demo
 
