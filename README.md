@@ -1,9 +1,9 @@
 ### Deadline
-This work should be completed before the exercise on **Friday 3rd November**.
+This work should be completed before the exercise on **Friday 2nd November**.
 
 ### Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-17/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-18/course-instructions#assignments).
 
 ### Homework
 Study all sections lined up below and be prepared to discussed the material.
@@ -130,3 +130,6 @@ class named NameGenerator. This class should have a method named
 generateStarWarsName that generates a Star Wars name, following the method
 described above. You will need to find out about a method of the String class
 that generates a substring.
+
+### Grading Criteria
+Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass, komp or fail, so it is essential you review them each week. These will change over time as your skills develop, so make sure you read the grading criteria issue carefully and tick off all the requirements.
