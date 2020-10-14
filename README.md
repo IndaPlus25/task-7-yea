@@ -47,13 +47,11 @@ numbers).
 Write a method in your RandomTester class called `throwDice` that returns a
 random number between 1 and 6 (inclusive).
 
-#### Exercise 5.18 (6.18)
-Extend your `getResponse` method so that it uses an ArrayList to store an
-arbitrary number of responses and randomly returns one of them.
-
-> **Assistant's note:** Your task is to write a method called `getResponse`
-> that randomly returns a string from an `ArrayList` of strings. This is really
-> all you need to know, but you can look at 5/6.17 for context.
+#### Exercise 5.17 + 5.18 (6.17 + 6.18)
+Write a method called `getResponse` that randomly returns a string from a
+collection of strings. You can add an `ArrayList<String>` as a field `words` to
+your RandomTester class and fill it with a few strings of your choosing. The
+`getResponse` will randomly returns one of these strings when called.
 
 #### Exercise 5.20 (6.20)
 Add a method `randInRangeMinMax` to your RandomTester class that takes two
