@@ -84,7 +84,9 @@ Write a method `drawPolygon(int n)` that draws a regular polygon with n sides
 (thus, n=3 draws a triangle, n=4 draws a square, etc.).
 
 #### Exercise 5.60 (6.65)
-Write a method called `spiral` that draws a spiral (see Figure 5.6).
+Write a method called `spiral` that draws a spiral that looks something like this:
+
+![Spiral example](./spiral-example.png)
 
 ### Bouncing Balls
 
