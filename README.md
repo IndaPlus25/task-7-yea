@@ -1,19 +1,23 @@
 ### Deadline
-This work should be completed before the exercise on **Friday 1st November**.
+This work should be completed before the exercise on **Friday 30th October**.
 
 ### Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-19/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-20/course-instructions#assignments).
 
-### Homework
-Study all sections lined up below and be prepared to discussed the material.
+### Preparation
+You must read and answer the questions in the OLI material:
 
-* **5th ed:** 5.1 -- 5.9, 8,9 and 5.11 -- 5.14
-* **6th ed:** 6.1 -- 6.10 and 6.12 -- 6.15
+- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=3f7e379aac1f088828b966ee895dc6bd)
+- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht20`
 
-> **Assistant's note:** 8.9 is grabbed seemingly out of nowhere for the 5th ed
+You may wish to also read from _Objects First with Java_:
+- **5th edition:** 5.1 -- 5.9, 8.9 and 5.11 -- 5.14
+- **6th edition:** 6.1 -- 6.10 and 6.12 -- 6.15
+
+> **Assistant's note:** 8.9 is grabbed seemingly out of nowhere for the 5th edition
 > as it covers Autoboxing and wrapper classes, which is covered in 6.10 in 6th
-> ed.
+> edition.
 
 ### Github Task:
 You must complete the following exercises. Exercise numbers in parentheses
