@@ -55,10 +55,8 @@ your RandomTester class and fill it with a few strings of your choosing. The
 
 #### Exercise 5.20 (6.20)
 Add a method `randInRangeMinMax` to your RandomTester class that takes two
-parameters, min and max, and generates a random number in the range min to max
-(inclusive). Rewrite the body of the method you wrote for the previous exercise
-so that it now calls this new method to generate its result. Note that it
-should not be necessary to use a loop in this method.
+integer parameters, `min` and `max`, and returns a random number in the range
+min to max (inclusive).
 
 ### Autoboxing and wrapper classes
 
