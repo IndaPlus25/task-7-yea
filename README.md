@@ -86,7 +86,7 @@ Write a method `drawPolygon(int n)` that draws a regular polygon with n sides
 #### Exercise 5.60 (6.65)
 Write a method called `spiral` that draws a spiral that looks something like this:
 
-![Spiral example](./spiral-example.png)
+![Spiral example](./spiral-example.png | width=320)
 
 ### Bouncing Balls
 
@@ -127,11 +127,11 @@ Your Star Wars last name:
 2 Add to this the first three letters of the name of the town or city where you were born.
 ```
 
-And now your task: Create a new BlueJ project named star-wars. In it create a
-class named NameGenerator. This class should have a method named
-generateStarWarsName that generates a Star Wars name, following the method
-described above. You will need to find out about a method of the String class
-that generates a substring.
+And now your task: Create a new class named `NameGenerator`. This class should
+have a method named `generateStarWarsName` that generates a Star Wars name,
+following the method described above. You will need to find out about a method
+of the String class that generates a substring. The method
+`generateStarWarsName` should return the name, rather than print it.
 
 ### Grading Criteria
 Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass, komp or fail, so it is essential you review them each week. These will change over time as your skills develop, so make sure you read the grading criteria issue carefully and tick off all the requirements.
