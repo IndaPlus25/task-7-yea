@@ -119,12 +119,12 @@ this:
 
 ```
 Your Star Wars first name:
-1 Take the first three letters of your last name.
-2 Add to that the first two letters of your first name.
+1) Take the first three letters of your last name.
+2) Append the first two letters of your first name to the letters from (1).
 
 Your Star Wars last name:
-1 Take the first two letters of your mother’s maiden name.
-2 Add to this the first three letters of the name of the town or city where you were born.
+3) Take the first two letters of your mother’s maiden name.
+4) Append the first three letters of the name of the town or city where you were born, to the letters from (3).
 ```
 
 And now your task: Create a new class named `NameGenerator`. This class should
