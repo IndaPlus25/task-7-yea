@@ -1,15 +1,15 @@
 ### Deadline
-This work should be completed before the exercise on **Friday 30th October**.
+This work should be completed before the exercise on **Friday 5th November**.
 
 ### Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-20/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-21/course-instructions#assignments).
 
 ### Preparation
 You must read and answer the questions in the OLI material:
 
-- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=3f7e379aac1f088828b966ee895dc6bd)
-- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht20`
+- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=881a25f0ac1f088839cfd13de6f232c9)
+- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht21`
 
 You may wish to also read from _Objects First with Java_:
 - **5th edition:** 5.1 -- 5.9, 8.9 and 5.11 -- 5.14
