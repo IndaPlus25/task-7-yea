@@ -1,150 +1,318 @@
-### Deadline
-This work should be completed before the exercise on **Friday 5th November**.
+# How to count words in Java
 
-### Instructions
+Say you are a scholar, curious to find out the number of times a word occurs
+in a text, maybe Shakespeare's _Hamlet_ for instance. In the old days you would have
+to do it by hand, using pen and paper. Fortunately we now have computers to do this tedious work.
+Your assignment this week will be to create a program that can perform
+such a task. 
+
+### 💀 Deadline
+This work should be completed before the exercise, on **Weekday 10th Month** depending on your group.
+
+### 🧑‍🏫 Instructions
 For instructions on how to do and submit the assignment, please see the
 [assignments section of the course instructions](https://gits-15.sys.kth.se/inda-21/course-instructions#assignments).
 
-### Preparation
-You must read and answer the questions in the OLI material:
-
+### ✍️ Preparation
+[//]: # (TODO: Is this the right module?)
 - Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=881a25f0ac1f088839cfd13de6f232c9)
-- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht21`
+- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
 
-You may wish to also read from _Objects First with Java_:
-- **5th edition:** 5.1 -- 5.9, 8.9 and 5.11 -- 5.14
-- **6th edition:** 6.1 -- 6.10 and 6.12 -- 6.15
+### ✅ Learning Goals
+This weeks learning goals include:
 
-> **Assistant's note:** 8.9 is grabbed seemingly out of nowhere for the 5th edition
-> as it covers Autoboxing and wrapper classes, which is covered in 6.10 in 6th
-> edition.
+* Using documentation
+* Reading from a text file
+* Using the `HashMap` class
 
-### Github Task:
-You must complete the following exercises. Exercise numbers in parentheses
-are for the 6th ed, while the ones without are for the 5th ed.
 
-- 5.14, 5.16, 5.18 and 5.20 (6.14, 6.16, 6.18 and 6.20)
-- 5.XX
-- 5.57 -- 5.60 (6.62 -- 6.65)
-- 5.62 & 5.64 -- 5.66 (6.68 and 6.70-6.72)
-- 5.71 (6.87)
+### 🚨 Troubleshooting Guide 
+If you have any questions or problems, follow this procedure: <br/>
 
-Please commit any written answers to the [`docs`](docs) folder, and commit any
-Java code developed to the [`src`](src) folder of your KTH Github repo.
-Remember to push to KTH Github.
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-22/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA).
 
-### RandomTester
-The purpose of this project is to practice generating random numbers for simple
-tasks.
+We encourage you to discuss with your course friends, but **do not share answers**!
 
-#### Exercise 5.14 (6.14) (src - use `random`)
-Write some code (in BlueJ) to test the generation of random numbers. To do
-this, create a new class called RandomTester. In class RandomTester, implement
-two methods: `printOneRandom` (which prints out one random number) and
-`printMultiRandom(int howMany)` (which has a parameter to specify how many
-numbers you want, and then prints out the appropriate number of random
-numbers).
+### 🏛 Assignment
 
-#### Exercise 5.16 (6.16) (src - use `random`)
-Write a method in your RandomTester class called `throwDice` that returns a
-random number between 1 and 6 (inclusive).
+#### Exercise 7.0 -- Reading words from a file
+We will begin by creating a class for reading in text from 
+a file and splitting it into separate words. In your [`src`](src)
+folder, create a file containing a class called `FileWordSplitter`.
+Add a `private` field to your class of type `ArrayList<String>` called
+`words`. 
 
-#### Exercise 5.17 + 5.18 (6.17 + 6.18) (src - use `random`)
-Write a method called `getResponse` that randomly returns a string from a
-collection of strings. You can add an `ArrayList<String>` as a field `words` to
-your RandomTester class and fill it with a few strings of your choosing. The
-`getResponse` will randomly returns one of these strings when called.
+Now add a constructor to your class with the following header:
+```java
+public FileWordSplitter(String filename)
+```
+The constructor should read the file with the given filename and 
+add all the words in the file to the `words` `ArrayList`. You can find a guide 
+to reading a file with Java below.
 
-#### Exercise 5.20 (6.20) (src - use `random`)
-Add a method `randInRangeMinMax` to your RandomTester class that takes two
-integer parameters, `min` and `max`, and returns a random number in the range
-min to max (inclusive).
+When you read from a file with `nextLine` you get a `String` that will be 
+a whole _line_ of the text. You will need to split this up into individual
+words. Look in the documentation for the [String class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html),
+and see if you can find a method for splitting a `String` into smaller strings.
+For each line, add the words from the line to the `words` `ArrayList`.
+In order to make this exercise slightly easier, we have provided a sample file [`hamlet.txt`](src/hamlet.txt)
+where all punctuation marks have been removed, and we have made sure that all words are separated by exactly
+one space character (` `).
 
-### Autoboxing and wrapper classes
-The purpose here is to ensure you can work with Java's autoboxing capability for
-converting primitive types to their reference type equivalent.
-
-#### Exercies 5.XX
-**a:** Rewrite the following statement to utilize autoboxing:
+<details>
+    <summary> 🛠 Reading a file line by line</summary>
 
 ```java
-Integer wrapped = new Integer(2);
+try {
+    // Attempt to open a text file
+    BufferedReader file = new BufferedReader(new FileReader("my_file.txt"));
+    
+    // Try to read the first line of the file
+    String line = file.readLine();
+    
+    // Keep reading while there are lines left
+    while (line != null){
+        // TODO: Add some code here to do something with the line
+        
+        line = file.readLine();
+    }
+
+    // Don't forget to close the file!
+    file.close();
+// Handle any errors that come up, such as the file not existing
+} catch (IOException e) {
+    System.out.println("Something went wrong: " + e.getMessage());
+    // Exit the program    
+    System.exit(1);     
+}
+```
+In this example we simply shut down the program if something goes 
+wrong. In actual "real world" code, 
+it is more common to have some form of fallback solution, such as
+prompting the user to select a different file if the file was not
+found.
+
+Remember that you need to _import_ all classes that you want to use
+(such as `BufferedReader`).
+</details>
+
+<details>
+    <summary> 📚 A brief note on regex </summary>
+
+In the documentation for [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) 
+class, you might find methods that requires a *Regular Expression* (or *regex*). 
+You will get familiar with these kinds of expression as you progress in your studies. For now, you can think of them as search patterns.
+Oracle has an [official tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/intro.html) on Java and regex, but it is fairly advanced. 
+If you get stuck, follow the steps in the 🚨 **Troubleshooting Guide**.
+</details>
+
+#### Exercise 7.1 -- Getting the words
+Add a *getter* to `FileWordSplitter` that returns the `words` that you read from the file.
+
+Now is a good time to check so that your class works as intended.
+In the [`src`](src) folder you have been provided a file called [`hamlet.txt`](src/hamlet.txt).
+This file contains the text from Shakespeare's _Hamlet_ (without punctuation). If you run the following code
+(in a main method or using JShell) you should see that the fourth word
+of the text is indeed `"Hamlet"`:
+
+```java
+FileWordSplitter splitter = new FileWordSplitter("hamlet.txt");
+ArrayList<String> hamletWords = splitter.getWords();
+System.out.println(hamletWords.get(3)); // Get the fourth word in hamlet.txt
 ```
 
-**b:** Write a statement that unboxes the `wrapped` variable into a primitive
-`int` variable called `unwrapped`.
+#### Exercise 7.2 -- Textual analysis
+Now it's time to create a class for analyzing the text and see if we can gleam any insights.
+Start by creating a new Java class called
+`FileTextAnalyzer` in the [`src`](src) directory. Add a `private` field called 
+`words` of type `FileWordSplitter` to your class, and add a constructor
+with the following header:
+```java
+public FileTextAnalyzer(String filename)
+```
+The constructor should create a new `FileWordSplitter` object using the given file 
+and save it in the `words` field.
 
-### Scribble Demo
-This project uses our programming skills to create graphics by drawing lines. By
-connecting lines together and using loops we can achieve interesting effects.
+#### Exercise 7.3 -- Counting words
+Let's start with simply counting the number of words in the text. Create a new method with the header:
+```java
+public int wordCount()
+```
+This method should simply return the number of words in the file. 
 
-#### Exercise 5.57 (6.62) (src - use `scribble`)
-In class DrawDemo, create a new method named `drawTriangle`. This method should
-create a pen (as in the drawSquare method) and then draw a green triangle.
+<details>
+    <summary> 📚 The Unix word count explained (and how the check your solution) </summary>
 
-#### Exercise 5.58 (6.63) (src - use `scribble`)
-Write a method `drawPentagon` that draws a pentagon.
+On Linux and MacOS you have the command line program `wc` (Word Count). 
+If you open up your terminal, and type `man wc` (short for *manual wordcount*), you will find the manual for 
+your system's integrated word count program (press *q* to end the manual).
+You can use it to check so that your code works as intended. Run the following example in the terminal (in the [`src`](src) folder):
 
-#### Exercise 5.59 (6.64) (src - use `scribble`)
-Write a method `drawPolygon(int n)` that draws a regular polygon with n sides
-(thus, n=3 draws a triangle, n=4 draws a square, etc.).
+```bash
+wc -w hamlet.txt
+```
+you should get the output 
+```bash
+30720 hamlet.txt
+```
+telling you that the file contains 30720 words. You can use this to make sure that your 
+`wordCount` method works correctly.
+</details>
 
-#### Exercise 5.60 (6.65) (src - use `scribble`)
-Write a method called `spiral` that draws a spiral that looks something like this:
+#### Exercise 7.4 -- Counting different words using a `HashMap`
+Let's move on to counting the number of times different words occur in the text.
+For this, we will be using a data structure called a `HashMap` in Java (you might also find the 
+same data structure called "dictionary" or "associative array" or something similar in other programming languages).
+You can find a brief summary of how to work with `HashMaps` below.
 
-![Spiral example](./spiral-example.png)
+Add a field called `wordOccurrences` to your `FileTextAnalyzer` class. This field should be a `HashMap` that associates
+Strings with Integers. Add code in your constructor for iterating over every word in the file and counting the
+number of times words occur. To test your implementation, you may also want to add a *getter* (`getwordOccurrences`).
 
-### Bouncing Balls
-This project gives the chance to work with animation and some simple physics. It
-can be challenging to make this project work in some environments (e.g. WSL) so
-using BlueJ can be a simple solution to test your code.
+<details>
+    <summary>📚 The HashMap class</summary>
 
-#### Exercise 5.62 (6.68) (src - use `bouncing-balls`)
-Change the method `bounce` in class BallDemo to let the user choose how many
-balls should be bouncing.
+The [`HashMap`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html) stores a `key` and 
+an associated `value`. The type of the key and the value can be any Java class (but not primitive types) 
+and therefore the class is _parameterized_ by two types. You can create a `HashMap` that has `String` keys and `Integer` 
+values as:
+```java
+HashMap<String, Integer> myHashMap = new HashMap<>();
+```
+Note the similarity to creating an `ArrayList`, only with two class names instead of one. 
 
-#### Exercise 5.64 (6.70) (src - use `bouncing-balls`)
-Change the `bounce` method to place the balls randomly anywhere in the top half
-of the screen.
+You can _associate_ a value with a key using the `put` method. For instance
+```java
+myHashMap.put("Hello", 1337);
+```
+will link the key `"Hello"` to the value `1337`. It's important to remember that the key _must_ be unique, but there
+can be several of the same value. For instance, it is not possible to have a `HashMap` where you have two keys with the
+value `"Hello"`.
 
-#### Exercise 5.65 (6.71) (src - use `bouncing-balls`)
-Write a new method named `boxBounce`. This method draws a rectangle (the “box”)
-on screen and one or more balls inside the box. For the balls, do not use
-BouncingBall, but create a new class BoxBall that moves around inside the box,
-bouncing off the walls of the box so that the ball always stays inside. The
-initial position and speed of the ball should be random. The boxBounce method
-should have a parameter that specifies how many balls are in the box.
+You can _get_ the value associated with a key using the `get` method:
 
-#### Exercise 5.66 (6.72) (src - use `bouncing-balls`)
-Give the balls in boxBounce random colors.
+```java
+// Will store the value '1337' in the variable 'valueOfHello'
+int valueOfHello = myHashMap.get("Hello"); 
+```
+A `HashMap` can be seen as a function (in the mathematical sense) taking one input (the key) and giving
+one output (the value). Another term for a function sometimes used in mathematics is a 
+[map](https://en.wikipedia.org/wiki/Map_(mathematics)), which explains the somewhat strange name of the `HashMap`
+(we'll get to the "hash" part later in the course).
 
-### Star Wars
-The final project gives you some practice in String manipulation.
+A common thing you want to do with a `HashMap` is to update the value of some key, for instance adding a
+word to the count, changing the value associated with `"Hello"` to `1338`. This can be done using a combination
+of `get` and `put`:
 
-#### Exercise 5.71 (6.87) (src - use `starwars`)
-There is a rumor circulating on the Internet that George Lucas (the creator of
-the Star Wars movies) uses a formula to create the names for the characters in
-his stories (Jar Jar Binks, ObiWan Kenobi, etc.). The formula—allegedly—is
-this:
+```java
+int oldValue = myHashMap.get("hello");
+myHashMap.put("Hello", oldValue + 1);
+```
+
+Since this is something you want to do often, there is a special method in `HashMap` called `merge`, that
+allows you to take a value and _merge_ it with another value. The code above could also be written
+
+```java
+myHashMap.merge("Hello", 1, Integer::sum);
+```
+
+This will take the old value associated with `"Hello"` and merge it with `1` using the `sum` method from the `Integer`
+class. Simply put, it will associate `oldValue + 1` with `"Hello"`. Don't worry if this seems a bit weird and abstract
+right now, for this task you can simply use the code as given above. If you would like an in-depth explanation of the latter example, we encourage you to ask a TA!
+</details>
+
+<details>
+    <summary> 🛠 Pseudocode </summary>
+
+We are going to give you so-called [*pseudocode*](https://en.wikipedia.org/wiki/Pseudocode)
+describing how to count word occurrences.
+Pseudocode serves as a template for your code, but is not written in any actual programming language.
+You will surely come across more examples like this as you progress your studies, 
+and being able to read and formulate pseudocode is a skill every programmer should have.
 
 ```
-Your Star Wars first name:
-1) Take the first three letters of your last name.
-2) Append the first two letters of your first name to the letters from (1).
-
-Your Star Wars last name:
-3) Take the first two letters of your mother’s maiden name.
-4) Append the first three letters of the name of the town or city where you were born, to the letters from (3).
+words := all words in hamlet.txt
+map := empty hashmap
+∀ word ∈ words:
+    if word ∉ map
+        put word in map with count 1
+    else 
+        increment count for word by 1
 ```
 
-And now your task: Create a new class named `NameGenerator`. This class should
-have a method named `generateStarWarsName` that generates a Star Wars name,
-following the method described above. You will need to find out about a method
-of the String class that generates a substring. The method
-`generateStarWarsName` should return the name, rather than print it.
+In this example, we use mathematical notation. Here is an explanation of the symbols:
 
-### Grading Criteria
-Each week we will communicate grading criteria through the [issue tracker](../../issues/). Grading criteria set the basic standards for a pass,
-komp or fail, so it is essential you review them each week. These will change
-over time as your skills develop, so make sure you read the grading criteria
-issue carefully and tick off all the requirements.
+* `:=` a new definition
+* `∀` *for all*
+* `∈` *in* 
+* `∉` *not in*
+
+There are no fixed standards for how to write pseudocode, so you will probably
+see many different styles being used. In general, pseudocode tends to be more abstract
+and "_high level_" than actual running program code.
+</details>
+
+#### Exercise 7.5 -- Capitalization matters (and `occurrencesOf`)!
+One important thing to remember is that _capitalization matters_. Java considers 
+`"Hello"` and `"hello"` to be two completely different strings, even though they contain the same english word.
+Of course, if we have the text `"Hello hello my friends"`, we want to make sure that we count two occurrences 
+of `"hello"`. The [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+class contains a method for converting all letters to lower case. Make sure to apply this method to every word 
+that you use as a key in your `HashMap`, this way `"Hello"` and `"hello"` will count as the same word.
+
+Add a method with the header: 
+```java
+public int occurrencesOf(String word) 
+```
+This should simply return the number of times a word occurs in the file. 
+If you use the [`hamlet.txt`](src/hamlet.txt) file you should be able to see that the word `"Hamlet"`
+occurs 92 times. This method should also be _case-insensitive_, so make sure that you get the same result
+for the string `"hamlet"`. Make sure that you return `0` for words that are not present in the file. 
+
+#### Exercise 7.6 -- Word frequencies
+Add a method with the header
+```java
+public double frequencyOf(String word)
+```
+that returns the proportion of the text that consists of that word. As an example, since the file 
+[`hamlet.txt`](src/hamlet.txt) contains 92 occurrences of `"Hamlet"` and 30720 words in total.
+`frequencyOf("Hamlet")` should return `0.002994791666666667` (_92 / 30720_). Once again, this method should
+be _case-insensitive_ and return `0` if a word that is not in the text is used as an argument.
+
+<details> 
+    <summary> 📚 Type conversion </summary>
+
+You might find yourself with the error: `Type mismatch: cannot convert from int to double`.
+The problem here is that we want the result as a double, but we
+divide two whole numbers. As a default, Java will perform _integer division_, so that _5 / 2_ gives the value _2_
+instead of _2.5_. In order to solve this you will need to use [_type conversion_](https://en.wikipedia.org/wiki/Type_conversion)
+(sometimes called _casting_) to convert an `int` to a `double`. In Java this is done by putting a type name in
+parenthesis in front of the value you want to convert, such as 
+```java
+int fiveAsAnInt = 5;
+double fiveAsADouble = (double) fiveAsAnInt;
+```
+ </details>
+
+#### Exercise 7.7 -- Unique words
+As a final part of our `FileTextAnalyzer` class, let's calculate the number of _unique_ words in a file.
+Create a method with the header:
+```java
+public int uniqueWordCount()
+```
+Here we can use the special property of `HashMap`, which is that the keys has to be unique. There is also a special method
+in the `HashMap` class for getting all the keys. Read the 
+[documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
+and use this method in your code. You should find that _Hamlet_ contains 4810 unique words.
+
+### Bugs and errors?
+If you find any inconsistencies (spelling errors, grammatically incorrect sentences et c) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+
+### Acknowledgment
+This task was designed by                <br>
+[Linus Östlund](mailto:linusost@kth.se)  <br>
+[Sofia Bobadilla](mailto:sofbob@kth.se)  <br>
+[Gabriel Skoglund](mailto:gabsko@kth.se) <br>
+[Arvid Siberov](mailto:asiberov@kth.se)  <br>
