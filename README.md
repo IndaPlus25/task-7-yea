@@ -7,15 +7,15 @@ Your assignment this week will be to create a program that can perform
 such a task. 
 
 ### 💀 Deadline
-This work should be completed before the exercise, on **Weekday 10th Month** depending on your group.
+This work should be completed before the exercise, on **Friday 4th November**.
 
 ### 🧑‍🏫 Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-21/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-22/course-instructions#assignments).
 
 ### ✍️ Preparation
-[//]: # (TODO: Is this the right module?)
-- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=881a25f0ac1f088839cfd13de6f232c9)
+- Read [Module 8: Exceptions and Basic I/O](https://kth.oli.cmu.edu/jcourse/workbook/activity/page?context=f5e5a846ac1f088869422331ead587a5)
+- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a83bac1f08885066db1b3c2270f1)
 - If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
 
 ### ✅ Learning Goals
@@ -24,7 +24,6 @@ This weeks learning goals include:
 * Using documentation
 * Reading from a text file
 * Using the `HashMap` class
-
 
 ### 🚨 Troubleshooting Guide 
 If you have any questions or problems, follow this procedure: <br/>
