@@ -98,6 +98,49 @@ Remember that you need to _import_ all classes that you want to use
 </details>
 
 <details>
+<summary> 📚 Introduction to exceptions</summary>
+
+As you can see in the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)), the constructors for the `FileWriter` class have the words `throws IOException` next to them, like so: 
+
+```java
+public FileWriter(String fileName, boolean append) throws IOException                                                 
+```
+
+Exceptions are the preferred way of handling errors in Java. The `FileWriter`
+constructor throws an
+[`IOException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html)
+because there might occur an error pertaining to I/O (short for Input / Output)
+when executing the constructor. For example, the user running the Java program
+might lack permission to create files in the directory that the constructor
+tries to create a file in. This will cause the constructor to be unable to
+create the required file. It will then throw an `IOException`.
+
+An unhandled exception will crash the program and print some
+debugging information to the terminal. While drastic, this is sometimes exactly
+what you want. Some kind of errors are difficult or impossible to recover from.
+But you can also _catch_ an exception, which will prevent it from crashing the
+program, and allows you as a programmer to handle the error in a more graceful
+way. The syntax is similar to `if`/`else` statements, and looks like the following:
+
+```java
+try {
+    // Here is code that may or may not throw an exception
+    FileWriter writer = new FileWriter("foo.txt", true);
+} catch (IOException theException) { // Here you specify the type of exception that you want to catch
+    // If any of the lines above throw an IOException, this block of code will be executed
+    System.out.println("Unable to open the file 'foo.txt'");
+    System.out.println("Please make sure that you have the correct permissions, and then try again!");
+}
+```
+
+There are different types of exceptions, and some exceptions _must_ be caught,
+while others are less restrictive. This is only meant as a brief overview. For
+further reading, check out Oracle's excellent
+[tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+</details>
+
+
+<details>
     <summary> 📚 A brief note on regex </summary>
 
 In the documentation for [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) 
