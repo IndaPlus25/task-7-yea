@@ -1,25 +1,28 @@
 # How to count words in Java
 
 Say you are a scholar, curious to find out the number of times a word occurs
-in a text, maybe Shakespeare's _Hamlet_ for instance. In the old days you would have
-to do it by hand, using pen and paper. Fortunately we now have computers to do this tedious work.
+in a text, maybe Shakespeare's _Hamlet_ for instance. In the old days, you would have
+to do it by hand, using pen and paper. Fortunately, we now have computers to do this tedious work.
 Your assignment this week will be to create a program that can perform
 such a task. 
 
 ### 💀 Deadline
-This work should be completed before the exercise, on **Friday 4th November**.
+This work should be completed before the exercise, on **Friday 3rd November**.
 
 ### 🧑‍🏫 Instructions
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-22/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-23/course-instructions#assignments).
 
 ### ✍️ Preparation
-- Read [Module 8: Exceptions and Basic I/O](https://kth.oli.cmu.edu/jcourse/workbook/activity/page?context=f5e5a846ac1f088869422331ead587a5)
-- Read [Module 7: Documentation](https://kth.oli.cmu.edu/jcourse/webui/syllabus/module.do?context=f5e5a83bac1f08885066db1b3c2270f1)
-- If you have not done so, goto https://kth.oli.cmu.edu/, signup and register for the course key `dd1337-ht22`
+- Read and answer all questions in Module 7: [Documentation](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/container/documentation)
+- Read and answer all questions in Module 8: [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/page/exceptions_amp_basic_io)
+- You can access the OLI material by
+  1. logging in via Canvas (see the [OLI Torus SE](https://canvas.kth.se/courses/41415/external_tools/4247) link in the left menu)
+  2. Then start reading [Documentation](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/container/documentation) and [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/page/exceptions_amp_basic_io)
+
 
 ### ✅ Learning Goals
-This weeks learning goals include:
+This week's learning goals include:
 
 * Using documentation
 * Reading from a text file
@@ -28,8 +31,8 @@ This weeks learning goals include:
 ### 🚨 Troubleshooting Guide 
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-22/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-23/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
 3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA).
 
 We encourage you to discuss with your course friends, but **do not share answers**!
@@ -37,7 +40,7 @@ We encourage you to discuss with your course friends, but **do not share answers
 ### 🏛 Assignment
 
 #### Exercise 7.0 -- Reading words from a file
-We will begin by creating a class for reading in text from 
+We will begin by creating a class for reading text from 
 a file and splitting it into separate words. In your [`src`](src)
 folder, create a file containing a class called `FileWordSplitter`.
 Add a `private` field to your class of type `ArrayList<String>` called
@@ -87,9 +90,9 @@ try {
     System.exit(1);     
 }
 ```
-In this example we simply shut down the program if something goes 
+In this example, we simply shut down the program if something goes 
 wrong. In actual "real world" code, 
-it is more common to have some form of fallback solution, such as
+it is more common to have some form of a fallback solution, such as
 prompting the user to select a different file if the file was not
 found.
 
@@ -98,54 +101,11 @@ Remember that you need to _import_ all classes that you want to use
 </details>
 
 <details>
-<summary> 📚 Introduction to exceptions</summary>
-
-As you can see in the [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)), the constructors for the `FileWriter` class have the words `throws IOException` next to them, like so: 
-
-```java
-public FileWriter(String fileName, boolean append) throws IOException                                                 
-```
-
-Exceptions are the preferred way of handling errors in Java. The `FileWriter`
-constructor throws an
-[`IOException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html)
-because there might occur an error pertaining to I/O (short for Input / Output)
-when executing the constructor. For example, the user running the Java program
-might lack permission to create files in the directory that the constructor
-tries to create a file in. This will cause the constructor to be unable to
-create the required file. It will then throw an `IOException`.
-
-An unhandled exception will crash the program and print some
-debugging information to the terminal. While drastic, this is sometimes exactly
-what you want. Some kind of errors are difficult or impossible to recover from.
-But you can also _catch_ an exception, which will prevent it from crashing the
-program, and allows you as a programmer to handle the error in a more graceful
-way. The syntax is similar to `if`/`else` statements, and looks like the following:
-
-```java
-try {
-    // Here is code that may or may not throw an exception
-    FileWriter writer = new FileWriter("foo.txt", true);
-} catch (IOException theException) { // Here you specify the type of exception that you want to catch
-    // If any of the lines above throw an IOException, this block of code will be executed
-    System.out.println("Unable to open the file 'foo.txt'");
-    System.out.println("Please make sure that you have the correct permissions, and then try again!");
-}
-```
-
-There are different types of exceptions, and some exceptions _must_ be caught,
-while others are less restrictive. This is only meant as a brief overview. For
-further reading, check out Oracle's excellent
-[tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
-</details>
-
-
-<details>
     <summary> 📚 A brief note on regex </summary>
 
 In the documentation for [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) 
 class, you might find methods that requires a *Regular Expression* (or *regex*). 
-You will get familiar with these kinds of expression as you progress in your studies. For now, you can think of them as search patterns.
+You will get familiar with these kinds of expressions as you progress in your studies. For now, you can think of them as search patterns.
 Oracle has an [official tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/intro.html) on Java and regex, but it is fairly advanced. 
 If you get stuck, follow the steps in the 🚨 **Troubleshooting Guide**.
 </details>
@@ -166,7 +126,7 @@ System.out.println(hamletWords.get(3)); // Get the fourth word in hamlet.txt
 ```
 
 #### Exercise 7.2 -- Textual analysis
-Now it's time to create a class for analyzing the text and see if we can gleam any insights.
+Now it's time to create a class for analyzing the text and see if we can glean any insights.
 Start by creating a new Java class called
 `FileTextAnalyzer` in the [`src`](src) directory. Add a `private` field called 
 `words` of type `FileWordSplitter` to your class, and add a constructor
@@ -209,9 +169,9 @@ For this, we will be using a data structure called a `HashMap` in Java (you migh
 same data structure called "dictionary" or "associative array" or something similar in other programming languages).
 You can find a brief summary of how to work with `HashMaps` below.
 
-Add a field called `wordOccurrences` to your `FileTextAnalyzer` class. This field should be a `HashMap` that associates
+Add a field called `wordOccurrences` to your `FileTextAnalyzer` class. This field should be a `HashMap` that associate
 Strings with Integers. Add code in your constructor for iterating over every word in the file and counting the
-number of times words occur. To test your implementation, you may also want to add a *getter* (`getwordOccurrences`).
+number of times words occur. To test your implementation, you may also want to add a *getter* (`getwordOccurrences`). You don't have to make the keys case insensitive at the moment.
 
 <details>
     <summary>📚 The HashMap class</summary>
@@ -244,8 +204,8 @@ one output (the value). Another term for a function sometimes used in mathematic
 [map](https://en.wikipedia.org/wiki/Map_(mathematics)), which explains the somewhat strange name of the `HashMap`
 (we'll get to the "hash" part later in the course).
 
-A common thing you want to do with a `HashMap` is to update the value of some key, for instance adding a
-word to the count, changing the value associated with `"Hello"` to `1338`. This can be done using a combination
+A common thing you want to do with a `HashMap` is to update the value of some key, for instance, adding a
+word to the count, or changing the value associated with `"Hello"` to `1338`. This can be done using a combination
 of `get` and `put`:
 
 ```java
@@ -262,7 +222,7 @@ myHashMap.merge("Hello", 1, Integer::sum);
 
 This will take the old value associated with `"Hello"` and merge it with `1` using the `sum` method from the `Integer`
 class. Simply put, it will associate `oldValue + 1` with `"Hello"`. Don't worry if this seems a bit weird and abstract
-right now, for this task you can simply use the code as given above. If you would like an in-depth explanation of the latter example, we encourage you to ask a TA!
+right now, for this task you can simply use the code given above. If you would like an in-depth explanation of the latter example, we encourage you to ask a TA!
 </details>
 
 <details>
@@ -270,8 +230,8 @@ right now, for this task you can simply use the code as given above. If you woul
 
 We are going to give you so-called [*pseudocode*](https://en.wikipedia.org/wiki/Pseudocode)
 describing how to count word occurrences.
-Pseudocode serves as a template for your code, but is not written in any actual programming language.
-You will surely come across more examples like this as you progress your studies, 
+Pseudocode serves as a template for your code but is not written in any actual programming language.
+You will surely come across more examples like this as you progress in your studies, 
 and being able to read and formulate pseudocode is a skill every programmer should have.
 
 ```
@@ -296,12 +256,13 @@ see many different styles being used. In general, pseudocode tends to be more ab
 and "_high level_" than actual running program code.
 </details>
 
+
 #### Exercise 7.5 -- Capitalization matters (and `occurrencesOf`)!
 One important thing to remember is that _capitalization matters_. Java considers 
-`"Hello"` and `"hello"` to be two completely different strings, even though they contain the same english word.
+`"Hello"` and `"hello"` to be two completely different strings, even though they contain the same English word.
 Of course, if we have the text `"Hello hello my friends"`, we want to make sure that we count two occurrences 
 of `"hello"`. The [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
-class contains a method for converting all letters to lower case. Make sure to apply this method to every word 
+class contains a method for converting all letters to lowercase. Make sure to apply this method to every word 
 that you use as a key in your `HashMap`, this way `"Hello"` and `"hello"` will count as the same word.
 
 Add a method with the header: 
@@ -330,7 +291,7 @@ You might find yourself with the error: `Type mismatch: cannot convert from int 
 The problem here is that we want the result as a double, but we
 divide two whole numbers. As a default, Java will perform _integer division_, so that _5 / 2_ gives the value _2_
 instead of _2.5_. In order to solve this you will need to use [_type conversion_](https://en.wikipedia.org/wiki/Type_conversion)
-(sometimes called _casting_) to convert an `int` to a `double`. In Java this is done by putting a type name in
+(sometimes called _casting_) to convert an `int` to a `double`. In Java, this is done by putting a type name in
 parenthesis in front of the value you want to convert, such as 
 ```java
 int fiveAsAnInt = 5;
@@ -344,17 +305,39 @@ Create a method with the header:
 ```java
 public int uniqueWordCount()
 ```
-Here we can use the special property of `HashMap`, which is that the keys has to be unique. There is also a special method
+Here we can use the special property of `HashMap`, which is that the keys have to be unique. There is also a special method
 in the `HashMap` class for getting all the keys. Read the 
 [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
 and use this method in your code. You should find that _Hamlet_ contains 4810 unique words.
 
-### Bugs and errors?
-If you find any inconsistencies (spelling errors, grammatically incorrect sentences et c) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-22/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
-### Acknowledgment
+### ❎ Checklist 
+- [ ] Create class `FileWordSplitter`.
+  - [ ] Add private field `words`. 
+  - [ ] Add constructor using `public FileWordSplitter(String filename)`. Make the constructor read all words in a given file and add them to `words`.
+  - [ ] Add a getter that returns `words`.
+- [ ] Create class `FileTextAnalyzer`.
+  - [ ] Add private field `words` of type `FileWordSplitter`.
+  - [ ] Add a constructor `public FileTextAnalyzer(String filename)`. Make it assign a new `FileWordSplitter` to `words`.
+  - [ ] Add a method `public int wordCount()` to count the number of words in a file. 
+  - [ ] Add a field called `wordOccurrences` of type `HashMap` that associate Strings with Integers.
+  - [ ] In the constructor, add all words in the file as keys to `wordOccurrences` and set the corresponding value to the number of occurrences.
+  - [ ] Add a getter for `wordOccurrences` called `getwordOccurrences`.
+  - [ ] Make your code case insensitive, meaning it should not matter if a word is capitalized or not. 
+  - [ ] Add a method to count the number of occurrences of a specific word using method `public int occurrencesOf(String word)`. Make it case insensitive.
+  - [ ] Add a method `public double frequencyOf(String word)` to print out the frequency of a specific word.
+  - [ ] Add a method `public int uniqueWordCount()` that prints the total number of unique words in a file. 
+    
+    > **Assistant's Note:** We've set up a checklist for you. Use it for a last look at your work before handing it in. You don't have to, but if you want to check off tasks, just put an "x" in the brackets in the README.md file.
+
+
+### 🐞 Bugs and errors?
+If you find any inconsistencies (spelling errors, grammatically incorrect sentences etc) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+
+### 🙏 Acknowledgment
 This task was designed by                <br>
 [Linus Östlund](mailto:linusost@kth.se)  <br>
 [Sofia Bobadilla](mailto:sofbob@kth.se)  <br>
 [Gabriel Skoglund](mailto:gabsko@kth.se) <br>
 [Arvid Siberov](mailto:asiberov@kth.se)  <br>
+[Alexander Runebou](mailto:alerun@kth.se)<br>
