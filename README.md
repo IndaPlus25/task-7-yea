@@ -4,42 +4,45 @@ Say you are a scholar, curious to find out the number of times a word occurs
 in a text, maybe Shakespeare's _Hamlet_ for instance. In the old days, you would have
 to do it by hand, using pen and paper. Fortunately, we now have computers to do this tedious work.
 Your assignment this week will be to create a program that can perform
-such a task. 
+such a task.
 
 ### 💀 Deadline
-This work should be completed before the exercise, on **Friday 3rd November**.
+
+This work should be completed before the exercise, on **Friday 1st November**.
 
 ### 🧑‍🏫 Instructions
+
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-23/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-24/course-instructions#assignments).
 
 ### ✍️ Preparation
-- Read and answer all questions in Module 7: [Documentation](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/container/documentation)
-- Read and answer all questions in Module 8: [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/page/exceptions_amp_basic_io)
-- You can access the OLI material by
-  1. logging in via Canvas (see the [OLI Torus SE](https://canvas.kth.se/courses/41415/external_tools/4247) link in the left menu)
-  2. Then start reading [Documentation](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/container/documentation) and [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_ht23_programmering_prog/preview/page/exceptions_amp_basic_io)
 
+- Review the [lecture slides](https://docs.google.com/presentation/d/1FIMXTNuWcQyHHAVNf0NLWWA468tMEeH6nu1wcZbf6lE/edit#slide=id.p)
+- Read and answer all questions in Module 7: [Documentation](https://qbl.sys.kth.se/sections/dd1337_programming/container/documentation)
+- Read and answer all questions in Module 8: [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_programming/container/class_design_amp_io)
 
 ### ✅ Learning Goals
+
 This week's learning goals include:
 
-* Using documentation
-* Reading from a text file
-* Using the `HashMap` class
+- Using documentation
+- Reading from a text file
+- Using the `HashMap` class
 
 ### 🚨 Troubleshooting Guide 
+
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-23/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-24/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
 3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA).
 
-We encourage you to discuss with your course friends, but **do not share answers**!
+We encourage you to discuss with your course friends, **but do not share answers!** Similarily, use of any AI services 🤖 are great to help explain things, **but please do not submit AI-generated solutions** - you must be both responsible for your own solutions and must be able to explain them under examination.
 
 ### 🏛 Assignment
 
 #### Exercise 7.0 -- Reading words from a file
+
 We will begin by creating a class for reading text from 
 a file and splitting it into separate words. In your [`src`](src)
 folder, create a file containing a class called `FileWordSplitter`.
@@ -47,9 +50,11 @@ Add a `private` field to your class of type `ArrayList<String>` called
 `words`. 
 
 Now add a constructor to your class with the following header:
+
 ```java
 public FileWordSplitter(String filename)
 ```
+
 The constructor should read the file with the given filename and 
 add all the words in the file to the `words` `ArrayList`. You can find a guide 
 to reading a file with Java below.
@@ -90,6 +95,7 @@ try {
     System.exit(1);     
 }
 ```
+
 In this example, we simply shut down the program if something goes 
 wrong. In actual "real world" code, 
 it is more common to have some form of a fallback solution, such as
@@ -104,14 +110,16 @@ Remember that you need to _import_ all classes that you want to use
     <summary> 📚 A brief note on regex </summary>
 
 In the documentation for [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) 
-class, you might find methods that requires a *Regular Expression* (or *regex*). 
+class, you might find methods that requires a _Regular Expression_ (or _regex_).
+
 You will get familiar with these kinds of expressions as you progress in your studies. For now, you can think of them as search patterns.
 Oracle has an [official tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/intro.html) on Java and regex, but it is fairly advanced. 
 If you get stuck, follow the steps in the 🚨 **Troubleshooting Guide**.
 </details>
 
 #### Exercise 7.1 -- Getting the words
-Add a *getter* to `FileWordSplitter` that returns the `words` that you read from the file.
+
+Add a _getter_ to `FileWordSplitter` that returns the `words` that you read from the file.
 
 Now is a good time to check so that your class works as intended.
 In the [`src`](src) folder you have been provided a file called [`hamlet.txt`](src/hamlet.txt).
@@ -126,22 +134,28 @@ System.out.println(hamletWords.get(3)); // Get the fourth word in hamlet.txt
 ```
 
 #### Exercise 7.2 -- Textual analysis
+
 Now it's time to create a class for analyzing the text and see if we can glean any insights.
 Start by creating a new Java class called
 `FileTextAnalyzer` in the [`src`](src) directory. Add a `private` field called 
 `words` of type `FileWordSplitter` to your class, and add a constructor
 with the following header:
+
 ```java
 public FileTextAnalyzer(String filename)
 ```
+
 The constructor should create a new `FileWordSplitter` object using the given file 
 and save it in the `words` field.
 
 #### Exercise 7.3 -- Counting words
+
 Let's start with simply counting the number of words in the text. Create a new method with the header:
+
 ```java
 public int wordCount()
 ```
+
 This method should simply return the number of words in the file. 
 
 <details>
@@ -155,15 +169,18 @@ You can use it to check so that your code works as intended. Run the following e
 ```bash
 wc -w hamlet.txt
 ```
-you should get the output 
+
+you should get the output:
+
 ```bash
 30720 hamlet.txt
 ```
-telling you that the file contains 30720 words. You can use this to make sure that your 
-`wordCount` method works correctly.
+
+telling you that the file contains 30720 words. You can use this to make sure that your `wordCount` method works correctly.
 </details>
 
 #### Exercise 7.4 -- Counting different words using a `HashMap`
+
 Let's move on to counting the number of times different words occur in the text.
 For this, we will be using a data structure called a `HashMap` in Java (you might also find the 
 same data structure called "dictionary" or "associative array" or something similar in other programming languages).
@@ -176,19 +193,21 @@ number of times words occur. To test your implementation, you may also want to a
 <details>
     <summary>📚 The HashMap class</summary>
 
-The [`HashMap`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html) stores a `key` and 
-an associated `value`. The type of the key and the value can be any Java class (but not primitive types) 
-and therefore the class is _parameterized_ by two types. You can create a `HashMap` that has `String` keys and `Integer` 
+The [`HashMap`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html) stores a `key` and an associated `value`. The type of the key and the value can be any Java class (but not primitive types) and therefore the class is _parameterized_ by two types. You can create a `HashMap` that has `String` keys and `Integer` 
 values as:
+
 ```java
 HashMap<String, Integer> myHashMap = new HashMap<>();
 ```
-Note the similarity to creating an `ArrayList`, only with two class names instead of one. 
+
+Note the similarity to creating an `ArrayList`, only with two class names instead of one.
 
 You can _associate_ a value with a key using the `put` method. For instance
+
 ```java
 myHashMap.put("Hello", 1337);
 ```
+
 will link the key `"Hello"` to the value `1337`. It's important to remember that the key _must_ be unique, but there
 can be several of the same value. For instance, it is not possible to have a `HashMap` where you have two keys with the
 value `"Hello"`.
@@ -199,6 +218,7 @@ You can _get_ the value associated with a key using the `get` method:
 // Will store the value '1337' in the variable 'valueOfHello'
 int valueOfHello = myHashMap.get("Hello"); 
 ```
+
 A `HashMap` can be seen as a function (in the mathematical sense) taking one input (the key) and giving
 one output (the value). Another term for a function sometimes used in mathematics is a 
 [map](https://en.wikipedia.org/wiki/Map_(mathematics)), which explains the somewhat strange name of the `HashMap`
@@ -256,8 +276,8 @@ see many different styles being used. In general, pseudocode tends to be more ab
 and "_high level_" than actual running program code.
 </details>
 
-
 #### Exercise 7.5 -- Capitalization matters (and `occurrencesOf`)!
+
 One important thing to remember is that _capitalization matters_. Java considers 
 `"Hello"` and `"hello"` to be two completely different strings, even though they contain the same English word.
 Of course, if we have the text `"Hello hello my friends"`, we want to make sure that we count two occurrences 
@@ -266,19 +286,24 @@ class contains a method for converting all letters to lowercase. Make sure to ap
 that you use as a key in your `HashMap`, this way `"Hello"` and `"hello"` will count as the same word.
 
 Add a method with the header: 
+
 ```java
 public int occurrencesOf(String word) 
 ```
+
 This should simply return the number of times a word occurs in the file. 
 If you use the [`hamlet.txt`](src/hamlet.txt) file you should be able to see that the word `"Hamlet"`
 occurs 92 times. This method should also be _case-insensitive_, so make sure that you get the same result
 for the string `"hamlet"`. Make sure that you return `0` for words that are not present in the file. 
 
 #### Exercise 7.6 -- Word frequencies
+
 Add a method with the header
+
 ```java
 public double frequencyOf(String word)
 ```
+
 that returns the proportion of the text that consists of that word. As an example, since the file 
 [`hamlet.txt`](src/hamlet.txt) contains 92 occurrences of `"Hamlet"` and 30720 words in total.
 `frequencyOf("Hamlet")` should return `0.002994791666666667` (_92 / 30720_). Once again, this method should
@@ -297,21 +322,24 @@ parenthesis in front of the value you want to convert, such as
 int fiveAsAnInt = 5;
 double fiveAsADouble = (double) fiveAsAnInt;
 ```
- </details>
+</details>
 
 #### Exercise 7.7 -- Unique words
+
 As a final part of our `FileTextAnalyzer` class, let's calculate the number of _unique_ words in a file.
 Create a method with the header:
+
 ```java
 public int uniqueWordCount()
 ```
+
 Here we can use the special property of `HashMap`, which is that the keys have to be unique. There is also a special method
 in the `HashMap` class for getting all the keys. Read the 
 [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
 and use this method in your code. You should find that _Hamlet_ contains 4810 unique words.
 
-
 ### ❎ Checklist 
+
 - [ ] Create class `FileWordSplitter`.
   - [ ] Add private field `words`. 
   - [ ] Add constructor using `public FileWordSplitter(String filename)`. Make the constructor read all words in a given file and add them to `words`.
@@ -330,11 +358,12 @@ and use this method in your code. You should find that _Hamlet_ contains 4810 un
     
     > **Assistant's Note:** We've set up a checklist for you. Use it for a last look at your work before handing it in. You don't have to, but if you want to check off tasks, just put an "x" in the brackets in the README.md file.
 
-
 ### 🐞 Bugs and errors?
-If you find any inconsistencies (spelling errors, grammatically incorrect sentences etc) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-23/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
-### 🙏 Acknowledgment
+If you find any inconsistencies (spelling errors, grammatically incorrect sentences etc) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+
+### 🙏 Acknowledgments
+
 This task was designed by                <br>
 [Linus Östlund](mailto:linusost@kth.se)  <br>
 [Sofia Bobadilla](mailto:sofbob@kth.se)  <br>
