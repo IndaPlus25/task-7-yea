@@ -8,18 +8,18 @@ such a task.
 
 ### 💀 Deadline
 
-This work should be completed before the exercise, on **Friday 1st November**.
+This work should be completed before the exercise, on **Friday 31st October**.
 
 ### 🧑‍🏫 Instructions
 
 For instructions on how to do and submit the assignment, please see the
-[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-24/course-instructions#assignments).
+[assignments section of the course instructions](https://gits-15.sys.kth.se/inda-25/course-instructions#assignments).
 
 ### ✍️ Preparation
 
 - Review the [lecture slides](https://docs.google.com/presentation/d/1FIMXTNuWcQyHHAVNf0NLWWA468tMEeH6nu1wcZbf6lE/edit#slide=id.p)
-- Read and answer all questions in Module 7: [Documentation](https://qbl.sys.kth.se/sections/dd1337_programming/container/documentation)
-- Read and answer all questions in Module 8: [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_programming/container/class_design_amp_io)
+- Read and answer all questions in Module 7: [Documentation](https://qbl.sys.kth.se/sections/dd1337_ht25_programming/container/documentation)
+- Read and answer all questions in Module 8: [Exceptions & Basic IO](https://qbl.sys.kth.se/sections/dd1337_ht25_programming/container/class_design_amp_io)
 
 ### ✅ Learning Goals
 
@@ -33,11 +33,19 @@ This week's learning goals include:
 
 If you have any questions or problems, follow this procedure: <br/>
 
-1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-24/help/issues). Are other students asking about your problem?
-2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
+1. Look at this week's [posted issues](https://gits-15.sys.kth.se/inda-25/help/issues). Are other students asking about your problem?
+2. If not, post a question yourself by creating a [New Issue](https://gits-15.sys.kth.se/inda-25/help/issues/new). Add a descriptive title, beginning with "Task *x*: *summary of problem here*"
 3. Ask a TA in person during the [weekly lab](https://queue.csc.kth.se/Queue/INDA).
 
 We encourage you to discuss with your course friends, **but do not share answers!** Similarily, use of any AI services 🤖 are great to help explain things, **but please do not submit AI-generated solutions** - you must be both responsible for your own solutions and must be able to explain them under examination.
+
+### 🗺️ Make a Plan
+
+- Check your feedback on last week's issue tracker for a review and tips!
+- Open issues for your plan in the [issue tracker](/../../issues).
+- Commit at least once per issue.
+- Reference issues from commit messages using `Fixes #N` to automatically close them.
+- Read more about it [here](https://gits-15.sys.kth.se/inda-25/course-instructions/blob/main/ice-guide.md).
 
 ### 🏛 Assignment
 
@@ -338,29 +346,16 @@ in the `HashMap` class for getting all the keys. Read the
 [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
 and use this method in your code. You should find that _Hamlet_ contains 4810 unique words.
 
-### ❎ Checklist 
-
-- [ ] Create class `FileWordSplitter`.
-  - [ ] Add private field `words`. 
-  - [ ] Add constructor using `public FileWordSplitter(String filename)`. Make the constructor read all words in a given file and add them to `words`.
-  - [ ] Add a getter that returns `words`.
-- [ ] Create class `FileTextAnalyzer`.
-  - [ ] Add private field `words` of type `FileWordSplitter`.
-  - [ ] Add a constructor `public FileTextAnalyzer(String filename)`. Make it assign a new `FileWordSplitter` to `words`.
-  - [ ] Add a method `public int wordCount()` to count the number of words in a file. 
-  - [ ] Add a field called `wordOccurrences` of type `HashMap` that associate Strings with Integers.
-  - [ ] In the constructor, add all words in the file as keys to `wordOccurrences` and set the corresponding value to the number of occurrences.
-  - [ ] Add a getter for `wordOccurrences` called `getwordOccurrences`.
-  - [ ] Make your code case insensitive, meaning it should not matter if a word is capitalized or not. 
-  - [ ] Add a method to count the number of occurrences of a specific word using method `public int occurrencesOf(String word)`. Make it case insensitive.
-  - [ ] Add a method `public double frequencyOf(String word)` to print out the frequency of a specific word.
-  - [ ] Add a method `public int uniqueWordCount()` that prints the total number of unique words in a file. 
-    
-    > **Assistant's Note:** We've set up a checklist for you. Use it for a last look at your work before handing it in. You don't have to, but if you want to check off tasks, just put an "x" in the brackets in the README.md file.
+### ❎ Checklist
+- [ ] Cloned your repository to your local computer
+- [ ] Made a solid plan using issues
+- [ ] Completed all exercises to be best of your ability
+- [ ] Closed issues for completed exercises (with "Fixes #N" in commit messages)
+- [ ] Pushed your work to KTH GitHub!
 
 ### 🐞 Bugs and errors?
 
-If you find any inconsistencies (spelling errors, grammatically incorrect sentences etc) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-24/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
+If you find any inconsistencies (spelling errors, grammatically incorrect sentences etc) or errors in this exercise, please open a [New Issue](https://gits-15.sys.kth.se/inda-25/help/issues/new) with the title "Task *x* Error: *summary of error here*". Found bugs will be rewarded by mentions in the acknowledgment section.
 
 ### 🙏 Acknowledgments
 
