@@ -42,7 +42,7 @@ We encourage you to discuss with your course friends, **but do not share answers
 ### 🗺️ Make a Plan
 
 - Check your feedback on last week's issue tracker for a review and tips!
-- Open issues for your plan in the [issue tracker](/../../issues).
+- Open issues for your plan in the [issue tracker](../../issues).
 - Commit at least once per issue.
 - Reference issues from commit messages using `Fixes #N` to automatically close them.
 - Read more about it [here](https://gits-15.sys.kth.se/inda-25/course-instructions/blob/main/ice-guide.md).
@@ -125,6 +125,8 @@ Oracle has an [official tutorial](https://docs.oracle.com/javase/tutorial/essent
 If you get stuck, follow the steps in the 🚨 **Troubleshooting Guide**.
 </details>
 
+[Open an issue for Exercise 7.0](../../issues/new?title=Exercise+7.0+--+Reading+words+from+a+file)
+
 #### Exercise 7.1 -- Getting the words
 
 Add a _getter_ to `FileWordSplitter` that returns the `words` that you read from the file.
@@ -140,6 +142,7 @@ FileWordSplitter splitter = new FileWordSplitter("hamlet.txt");
 ArrayList<String> hamletWords = splitter.getWords();
 System.out.println(hamletWords.get(3)); // Get the fourth word in hamlet.txt
 ```
+[Open an issue for Exercise 7.1](../../issues/new?title=Exercise+7.1+--+Getting+the+words)
 
 #### Exercise 7.2 -- Textual analysis
 
@@ -155,6 +158,8 @@ public FileTextAnalyzer(String filename)
 
 The constructor should create a new `FileWordSplitter` object using the given file 
 and save it in the `words` field.
+
+[Open an issue for Exercise 7.2](../../issues/new?title=Exercise+7.2+--+Textual+analysis)
 
 #### Exercise 7.3 -- Counting words
 
@@ -186,6 +191,8 @@ you should get the output:
 
 telling you that the file contains 30720 words. You can use this to make sure that your `wordCount` method works correctly.
 </details>
+
+[Open an issue for Exercise 7.3](../../issues/new?title=Exercise+7.3+--+Counting+words)
 
 #### Exercise 7.4 -- Counting different words using a `HashMap`
 
@@ -284,6 +291,8 @@ see many different styles being used. In general, pseudocode tends to be more ab
 and "_high level_" than actual running program code.
 </details>
 
+[Open an issue for Exercise 7.4](../../issues/new?title=Exercise+7.4+--+Counting+different+words+using+a+HashMap)
+
 #### Exercise 7.5 -- Capitalization matters (and `occurrencesOf`)!
 
 One important thing to remember is that _capitalization matters_. Java considers 
@@ -303,6 +312,8 @@ This should simply return the number of times a word occurs in the file.
 If you use the [`hamlet.txt`](src/hamlet.txt) file you should be able to see that the word `"Hamlet"`
 occurs 92 times. This method should also be _case-insensitive_, so make sure that you get the same result
 for the string `"hamlet"`. Make sure that you return `0` for words that are not present in the file. 
+
+[Open an issue for Exercise 7.5](../../issues/new?title=Exercise+7.5+--+Capitalization+matters+%28and+occurrencesOf%29%21)
 
 #### Exercise 7.6 -- Word frequencies
 
@@ -332,6 +343,8 @@ double fiveAsADouble = (double) fiveAsAnInt;
 ```
 </details>
 
+[Open an issue for Exercise 7.6](../../issues/new?title=Exercise+7.6+--+Word+frequencies)
+
 #### Exercise 7.7 -- Unique words
 
 As a final part of our `FileTextAnalyzer` class, let's calculate the number of _unique_ words in a file.
@@ -345,6 +358,8 @@ Here we can use the special property of `HashMap`, which is that the keys have t
 in the `HashMap` class for getting all the keys. Read the 
 [documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
 and use this method in your code. You should find that _Hamlet_ contains 4810 unique words.
+
+[Open an issue for Exercise 7.7](../../issues/new?title=Exercise+7.7+--+Unique+words)
 
 ### ❎ Checklist
 - [ ] Cloned your repository to your local computer
